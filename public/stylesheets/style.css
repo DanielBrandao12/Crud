@@ -1,6 +1,7 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  
 }
 h1{
   text-align: center;
@@ -23,11 +24,35 @@ form div{
 
 }
 
+.form-update{
+  display:none;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+ left:  0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(5, 5, 5, 0.425);
+}
+.form-update form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+ align-items: center;
+  width: 350px;
+  height: 250px;
+ background-color: #ffffff;
+ box-shadow: 0 10px 10px 0;
+ border:1px solid #008000;
+
+}
+
 .container-list {
   
   border: 1px solid #008000;
-  margin: 20px 0;
-  padding: 20px;
+  margin: 5px 0;
+  padding: 10px;
 }
 
 .container-list h1{
@@ -111,7 +136,14 @@ th i {
   text-align: center;
 }
 
-
+.close{
+  cursor: pointer;
+  color: #008000;
+  font-size: 20px;
+  position: relative;
+  top: 5px;
+  left: 155px;
+}
 
 
 

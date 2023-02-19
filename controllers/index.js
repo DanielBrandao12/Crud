@@ -1,3 +1,4 @@
+const { render } = require('../app')
 const usersModels = require('../models/index')
 
 function index(req, res) {
@@ -7,12 +8,25 @@ function index(req, res) {
   };
   
   function createUser(req, res) {
-    
     const {nome,sobrenome, email } = req.body
+    const users = usersModels.getAll()
+    let id =1
+   
+    users.forEach(e => {
+      console.log(e)
     
-    usersModels.create( nome,sobrenome, email)
+
+         if(!e.id){
+           id =1
+          }else {
+   
+           id++
+          }
+       
+    
+    });
+    usersModels.create(id, nome,sobrenome, email)
     return res.redirect("/");
-  
   }
 
   function updateUser(req, res){

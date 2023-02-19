@@ -1,6 +1,8 @@
 const fs = require("fs");
 
-function User(nome,sobrenome, email) {
+function User(id, nome,sobrenome, email) {
+
+  this.id = id
   this.nome = nome;
   this.sobrenome = sobrenome;
   this.email = email;
@@ -16,6 +18,7 @@ function getAll() {
   return listUsers.map(
     (user) =>
       new User(
+        user.id,
         user.nome,
         user.sobrenome,
         user.email,
@@ -40,8 +43,8 @@ function update(id,nome, sobrenome, email){
   fs.writeFileSync("database/bd.json", JSON.stringify(user));
 }
 //função que vai receber os dados e salvar na minha lista
-function create(nome,sobrenome, email) {
-  const newUser = new User(nome,sobrenome, email);
+function create(id,nome,sobrenome, email) {
+  const newUser = new User(id, nome,sobrenome, email);
   const listUsers = getAll();
   listUsers.push(newUser);
   fs.writeFileSync("database/bd.json", JSON.stringify(listUsers));
