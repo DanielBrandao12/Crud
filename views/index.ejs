@@ -1,70 +1,81 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>CRUD</title>
-    <link rel='stylesheet' href='stylesheets/style.css' />
-    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-  </head>
-  <body>
-    <div class="container-list">
+
+<head>
+  <title>CRUD</title>
+  <link rel='stylesheet' href='stylesheets/style.css' />
+  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+  <div class="container-list">
     <form action="" method="post">
       <h1>Cadastrar Usuário</h1>
       <div class="add">
         <input type="text" name="nome" placeholder="Nome" id="name">
         <input type="text" name="sobrenome" placeholder="Sobrenone" id="last-name">
-        <input type="email" name="email" placeholder="E-mail" id="email">  
+        <input type="email" name="email" placeholder="E-mail" id="email">
 
-        <button class="button">Adicionar</button>    
+        <button class="button">Adicionar</button>
       </div>
     </form>
- 
+
   </div>
-    <div class="container-list">
-      <h1>Lista de Usuários</h1>
-    
-   
-      <form method="post" action="/?_method=PUT">
-        <div id="select">
-          
-          <table>
-            <thead>
-              <tr>
-                <th>Nome</th>
-                <th>Sobrenome</th>
-                <th>E-mail</th>
-                <th class="acao">Editar</th>
-                <th class="acao">Excluir</th>
-              </tr>
-            </thead>
-            <%for(let user of users){%>
-          <tbody id="<%=user.id%>">
+  <div class="container-list">
+    <h1>Lista de Usuários</h1>
+
+
+    <form method="post" action="/?_method=PUT">
+      <div id="select">
+
+        <table>
+          <thead>
             <tr>
-              <td><%=user.nome%></td>
-                <td><%=user.sobrenome%></td>
-                <td><%=user.email%></td>
-                <th><i class='bx bx-edit' id="<%=user.id%>"></i></th> 
-                <th><i class='bx bx-trash' ></i></th>
+              <th>Nome</th>
+              <th>Sobrenome</th>
+              <th>E-mail</th>
+              <th class="acao">Editar</th>
+              <th class="acao">Excluir</th>
             </tr>
-              
-          </tbody>
-          <%}%>
+          </thead>
+          <%for(let user of users){%>
+            <tbody id="<%=user.id%>">
+              <tr>
+                <td>
+                  <%=user.nome%>
+                </td>
+                <td>
+                  <%=user.sobrenome%>
+                </td>
+                <td>
+                  <%=user.email%>
+                </td>
+                <th><i class='bx bx-edit' id="<%=user.id%>"></i></th>
+                <form action="" method="post" class="formDelete">
+                  <th><button class='bx bx-trash' id="<%=user.id%>"></button></th>
+                </form>
+              </tr>
+
+            </tbody>
+            <%}%>
         </table>
-          
-        </div>
-      </form>
-      
-    </div>
-    <div class="form-update">
-      <form action="" method="post">
-          <span class="close">x</span>
-          <h2>Editar Usuário</h2>
-          <input type="text" name="nome" placeholder="Nome" id="name-edit">
-          <input type="text" name="sobrenome" placeholder="Sobrenone" id="last-name-edit">
-          <input type="email" name="email" placeholder="E-mail" id="email-edit">  
-  
-          <button class="button">Editar</button>   
-          </form> 
-    </div>
-    </body>
-    <script src="javascripts/index.js"></script>
+
+      </div>
+    </form>
+
+  </div>
+  <div class="form-update">
+    <form action="" method="post" class="form-edit">
+      <span class="close">x</span>
+      <h2>Editar Usuário</h2>
+      <input type="text" name="nome" placeholder="Nome" id="name-edit">
+      <input type="text" name="sobrenome" placeholder="Sobrenone" id="last-name-edit">
+      <input type="email" name="email" placeholder="E-mail" id="email-edit">
+
+      <button class="button">Salvar edição</button>
+    </form>
+  </div>
+</body>
+<script src="javascripts/index.js"></script>
+
 </html>
