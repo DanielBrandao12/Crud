@@ -26,7 +26,7 @@ form div {
 
 }
 
-.form-update {
+.form-update, .divFormDelete{
   display: none;
   justify-content: center;
   align-items: center;
@@ -38,7 +38,7 @@ form div {
   background-color: rgba(5, 5, 5, 0.425);
 }
 
-.form-update form {
+.form-update form, .formDelete{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -94,6 +94,7 @@ tr {
   padding: 5px;
   margin: 10px 0;
   width: 130px;
+  cursor: pointer;
 }
 
 
@@ -148,6 +149,7 @@ th i {
 
 .bx {
   font-size: 25px;
+  cursor: pointer;
 }
 
 .close {
@@ -157,4 +159,37 @@ th i {
   position: relative;
   top: 5px;
   left: 155px;
+}
+.divBtnDelete{
+  display: flex;
+  justify-content: center;
+ 
+}
+
+.btnNo, .formDelete button{
+  background-color: #008000;
+  border: none;
+  color: #ffffff;
+  font-size: 16px;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 10px 0;
+  width: 110px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 1s ease-out;
+}
+
+button:hover{
+  background-color:rgb(107, 187, 107);
+}
+
+
+.btnNo:hover{
+    background:rgb(107, 187, 107) ;
+}
+
+
+.spanIf{
+  font-size: 18px;
 }

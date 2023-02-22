@@ -8,7 +8,7 @@ const formEdit = document.querySelector('.form-edit')
 const buttonsDelete = document.querySelectorAll('.bx-trash')
 const close = document.querySelector('.close')
 const formDelete = document.querySelector('.formDelete')
-
+const divFormDelete = document.querySelector('.divFormDelete')
 buttons.forEach(e => {
     e.addEventListener('click', () => {
         if (users[e.id - 1].id == e.id) {
@@ -33,12 +33,18 @@ close.addEventListener('click', () => {
 
 
 buttonsDelete.forEach(e => {
+   
     e.addEventListener('click', () => {
-
-        if (confirm("Você realmente deseja excluir?")) {
-
+        
+            divFormDelete.style.display = "flex"
             formDelete.action = `/excluir/${e.id}?_method=DELETE`
-        }
-
     })
+})
+
+
+const btnNo = document.querySelector('.btnNo')
+
+
+btnNo.addEventListener('click', ()=>{
+    divFormDelete.style.display ="none"
 })

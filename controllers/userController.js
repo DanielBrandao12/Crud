@@ -16,18 +16,18 @@ function createUser(req, res) {
   let id = 1
 
   users.forEach(e => {
-
+    console.log(e.id)
     if (!e.id) {
 
       id = 1
 
-    } else {
+    } else  {
 
       id++
 
     }
   });
-
+console.log(id)
   usersModels.create(id, nome, sobrenome, email)
 
   return res.redirect("/");

@@ -12,9 +12,9 @@
     <form action="" method="post">
       <h1>Cadastrar Usuário</h1>
       <div class="add">
-        <input type="text" name="nome" placeholder="Nome" id="name">
-        <input type="text" name="sobrenome" placeholder="Sobrenone" id="last-name">
-        <input type="email" name="email" placeholder="E-mail" id="email">
+        <input type="text" name="nome" placeholder="Nome" id="name" required>
+        <input type="text" name="sobrenome" placeholder="Sobrenone" id="last-name" required>
+        <input type="email" name="email" placeholder="E-mail" id="email" required>
 
         <button class="button">Adicionar</button>
       </div>
@@ -38,6 +38,7 @@
               <th class="acao">Excluir</th>
             </tr>
           </thead>
+          <%let i=0%>
           <%for(let user of users){%>
             <tbody id="<%=user.id%>">
               <tr>
@@ -51,20 +52,22 @@
                   <%=user.email%>
                 </td>
                 <th><i class='bx bx-edit' id="<%=user.id%>"></i></th>
-                <form action="" method="post" class="formDelete">
-                  <th><button class='bx bx-trash' id="<%=user.id%>"></button></th>
-                </form>
+                <th><i class='bx bx-trash' id="<%=i++%>"></i></th>
+             
               </tr>
 
             </tbody>
-            <%}%>
-        </table>
+            
+            <% }%>
 
-      </div>
-    </form>
-
-  </div>
-  <div class="form-update">
+          </table>
+          
+        </div>
+      </form>
+      
+    </div>
+   
+    <div class="form-update">
     <form action="" method="post" class="form-edit">
       <span class="close">x</span>
       <h2>Editar Usuário</h2>
@@ -73,6 +76,16 @@
       <input type="email" name="email" placeholder="E-mail" id="email-edit">
 
       <button class="button">Salvar edição</button>
+    </form>
+  </div>
+
+  <div class="divFormDelete">
+    <form action="" method="post" class="formDelete">
+      <span class="spanIf">Deseja excluir usuário?</span>
+      <div class="divBtnDelete">
+        <button>Sim</button>
+        <span class="btnNo">Não</span>
+      </div>
     </form>
   </div>
 </body>
