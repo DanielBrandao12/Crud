@@ -65,16 +65,12 @@ function deletes(id) {
 
   const user = getAll()
 
-  user.forEach(e => {
 
-    if (e.id == id) {
 
       user.splice(id, 1)
 
       fs.writeFileSync("database/bd.json", JSON.stringify(user));
 
-    }
-  })
 }
 
 module.exports = {

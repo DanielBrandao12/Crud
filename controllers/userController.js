@@ -48,7 +48,7 @@ function updateUser(req, res) {
 function deleteUser(req, res) {
 
   const { id } = req.params
-
+console.log(id)
   usersModels.deletes(id)
 
   return res.redirect("/")
